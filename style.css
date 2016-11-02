@@ -1,0 +1,456 @@
+@charset "utf-8";
+
+js.body{
+background-image:none;
+}
+
+body{
+	margin:0;
+	padding:0;
+	background:#111;
+	font-family:'TitilliumText22LLight', Arial, sans-serif;
+	line-height:16px;
+	text-align:justify;
+}
+
+img{ 
+	text-decoration:none;
+	border:none; 
+
+}
+a:hover, a:active { outline: none; }
+
+a:focus { 
+    outline: none; 
+}
+:focus {outline:none;}
+::-moz-focus-inner { border: 0; }
+
+
+/* BACKGROUND IMAGE - VEGAS PLUGIN */
+.vegas-loading {
+	background-image:  url(images/loading.gif);
+ 	background-position: center center;
+	background-repeat: no-repeat;
+	position:fixed;
+	top:50%; 
+	left:50%;
+	width:90px;
+	height:60px;
+	margin:-30px 0 0 -45px; 
+	z-index:0;
+}
+
+/* TYPOGRAPHY ======================================================================*/
+
+h1{
+	font-family:'RalewayThin';
+	font-size:72px;
+	line-height:77px;
+	margin:10px 0 10px 0;
+	padding:0;
+	font-weight:normal;
+}
+
+
+h2{
+	font-family:'RalewayThin';
+	font-size:48px;
+	line-height:53px;
+	margin:10px 0 10px 0;
+	padding:0;
+	font-weight:normal;
+}
+
+h3{
+	font-family:'TitilliumText22LLight';
+	font-size:24px;
+	line-height:35px;
+	margin:10px 0 10px 0;
+	padding:0;
+	font-weight:normal;
+}
+
+h4{
+	font-family:'TitilliumText22LLight';
+	font-size:18px;
+	line-height:23px;
+	margin:10px 0 10px 0;
+	padding:0;
+	font-weight:normal;
+}
+
+h5{
+	font-family:'TitilliumText22LLight';
+	font-size:16px;
+	line-height:20px;
+	margin:10px 0 10px 0;
+	padding:0;
+	font-weight:normal;
+	border-bottom:1px solid #d1d1d1;
+}
+
+h6{
+	font-family:'TitilliumText22LLight';
+	font-size:13px;
+	line-height:17px;
+	margin:10px 0 10px 0;
+	padding:0;
+	font-weight:normal;
+	
+
+}
+a:link {
+	color:#0763c1; 
+	text-decoration:none;
+}
+a:visited {
+	color:#0763c1;
+	text-decoration:none;
+}
+a:hover {
+	color:#2ec5f9; 
+	text-decoration:none;
+}
+a:active {
+	color:#0000FF;
+}
+
+blockquote.bigquotes{
+	background:url(images/quote-small.png);
+	background-position: top left;
+  	background-repeat: no-repeat;
+	text-indent: 18px;
+	padding: 5px;
+  	margin: 0 0 5px 0;
+	font-style:oblique;
+}
+
+img.border{
+	border: 1px solid #ddd;
+	padding: 5px;
+	background: #f0f0f0;	
+}
+
+span .bold{
+	font-family:'TitilliumText22LBold';
+}
+
+
+/* Положение на стр ======================================================================*/
+#wrapper{
+	width:1024px;
+	height:392px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-196px 0 0 -512px;
+	padding:0;
+	background:url(images/dropshadow.png) no-repeat center center;
+}
+
+#innerleft{
+	width:480px;
+	height:360px;
+	margin:0;
+	padding:0;
+	position:relative;
+	left:31px;
+	top:0;
+	font-size:14px;
+	color:#a1a0a0;
+	background:#0e0e0e url(images/left-bg.jpg) no-repeat center center;
+}
+
+#innerright{
+	width:480px;
+	height:360px;
+	overflow:scroll;
+	margin:0;
+	padding:0;
+	position:absolute;
+	left:511px;
+	top:0;
+	background:#f4f2f2 url(images/right-bg.jpg) no-repeat center center;
+}
+
+#innerright,#contactcard{
+	font-size:12px;
+	color:#666;
+	text-shadow:1px 1px #ffffff;
+	word-break: break-all;
+	text-align:left;
+	color:LightSeaGreen;
+	text-shadow:10px,20px;
+}
+
+#innerright h1,#innerright h2,#innerright h4,#innerright h5,#innerright h6{
+	color:#555;
+}
+
+#borderleft, #borderright{
+	display:none;
+}
+
+/* Положение меню ======================================================================*/
+
+#header{
+	width:440px;
+	height:72px;
+	text-align:center;
+	margin:0;
+	padding:30px 20px 10px 20px;
+}
+
+#mainslide {
+  	width: 479px;
+  	height: 133px;
+  	overflow:hidden;
+}
+
+#mainimglight {
+  	width: 480px;
+  	height: 133px;
+  	position:absolute;
+ 	left:0;
+ 	top:112px;
+  	z-index: 200;
+}
+
+/* тоже меню ======================================================================*/
+
+#nav{
+	margin: 25px 0 0 30px;
+}
+
+.ie7 #nav{
+	padding:10px 0 0 30px;
+}
+
+#nav li{
+	float:left;	
+	list-style:none;
+}
+#nav li a{
+	margin-right:30px;
+	text-decoration:none;
+	color:#a1a0a0;
+}
+
+#nav li a:hover{
+	text-decoration:underline;
+	
+}
+
+#nav li a:active{
+	font-family:inherit;
+	font-size:inherit;
+	color:#fff;
+}
+
+.js .page{
+	height:460px;
+	
+}
+
+/* Динамика ======================================================================*/
+.js #innerright {
+	overflow:hidden;
+}
+.js #borderleft img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.js #borderleft{
+	display:block;
+	width:30px;
+	height:358px;
+	position:absolute;
+	left:511px;
+	top:0px;
+	z-index:100;
+	margin:0;
+	padding:0;
+	background:url(images/borderleft.png) repeat-y top left;
+	
+}
+
+.js #borderright{
+	display:block;
+	width:30px;
+	height:358px;
+	position:absolute;
+	left:960px;
+	top:0;
+	z-index:100;
+	background:url(images/borderright.png) repeat-y top left;
+}
+
+.js #borderbottom{
+	display:block;
+	width:276px;
+	height:30px;
+	position:absolute;
+	left:652px;
+	bottom:53px;
+	z-index:10;
+	background: url(images/bordertopbottom.png) repeat-y top left;
+}
+.js #bordertop{
+	display:block;
+	width:276px;
+	height:8px;
+	position:absolute;
+	left:652px;
+	top:43px;
+	z-index:10;
+	background:url(images/bordertopbottom.png) repeat-y top left;
+}
+
+.js .secondaryslide{
+	display:block;
+}
+.js .verticalline{
+	display:block;
+	width:2px;
+	height:216px;
+	position:absolute;
+	left:93px;
+	top:93px;
+	background-color:#e7e4e4;
+	overflow:visible;	
+}
+
+.js .scrollprevnext{
+	width:16px;
+	height:37px;
+	position: absolute;
+	bottom:0;
+	left:-7px;
+	background: url(images/scrollprevnext.png) no-repeat center bottom;	
+}
+.js #home{
+	position:absolute;
+	left:0px;
+	top:0x;
+	z-index:11;
+}
+
+.js #about{
+	position:absolute;
+	left:500px;
+	top:0;	
+}
+
+.js #resume {
+	position:absolute;
+	left:1000px;
+	top:0;	
+}
+
+.js #portfolio {
+	position:absolute;
+	left:1500px;
+	top:0;		
+}
+
+.js #contact {
+	position:absolute;
+	left:2000px;
+	top:0;	
+}
+
+
+/* Новости ======================================================================*/
+
+.pageheader{
+	position:relative;
+	color:#ffffff;
+	left:63px;
+	width:64px;
+	height:77px;
+	margin:0 0 -47px 0;
+	padding:18px 0 0 0;
+	text-align:center;
+	text-shadow:1px 1px #454545;
+	z-index:11;
+	background-color:#444444;
+	border-bottom: 1px dashed #e7e4e4;
+	border-top:2px solid #555555
+}
+
+.verticalline{
+	display:none;
+}
+.bx-pager{
+	position:absolute;
+	left:190px;
+	bottom:-6px;
+	z-index:11;
+	padding:0;
+	margin:0;
+	width: 100px;
+	text-align:center;
+	font-family:"Times New Roman", Times, serif;
+	font-style:oblique;
+}
+	
+.bx-next{
+	width:14px;
+	height:14px;
+	position:absolute;
+	left:87px;
+	bottom:29px;
+	z-index:10;
+}
+
+.bx-prev{
+	width:14px;
+	height:14px;
+	position:absolute;
+	left:87px;
+	bottom:50px;
+	z-index:10;
+}
+
+/* ... ======================================================================*/
+
+.content{
+	position:relative;
+	width:480px;
+	height:360px;
+
+
+	overflow:hidden;
+	right:140;
+	<div class="content pager"style="list-style: outside none none;height: 360px; width:480px; right:140px;"></div>
+	
+}
+
+.content p,.content h4,.content h5{ 
+	padding:0;
+	margin:0 0 10px 0;
+}
+
+/* Дом ======================================================================*/
+
+.welcomeslide{
+	text-align:center;
+	width:480px;
+	padding: 110px 0 0 0;/* CENTER */
+	height:360px;
+	font-size:14px;
+	color:#2c2c2c;
+}
+
+.welcomeslide img{
+	margin:15px 0 0 0;
+	padding:0;
+	width:401px;
+	height:240px;
+}
+/* Календарь ======================================================================*/
+
+/* Новости ======================================================================*/
