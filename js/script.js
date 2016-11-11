@@ -196,10 +196,10 @@ $('.open').click(
 		$("#wrapper").fadeIn(1000);
   		$("#bgpanel").fadeIn(1000);
 		$('#mainslide').crossSlide({
-      	speed: 15,
+      	speed: 20,
      	 fade: 1
     	}, [
-		//ENTER YOUR MAIN SLIDESHOW IMAGES HERE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 		{ src: 'images/slides/1.jpg' , dir: 'up' },
       	{ src: 'images/slides/2.jpg' , dir: 'down' },
       	{ src: 'images/slides/3.jpg' , dir: 'up' },
@@ -213,22 +213,8 @@ $('.open').click(
     	controls:false,
 		speed:1000,
 		pause:5000
+
   		});
-
-//UNCOMMENT BELOW FOR BACKGROUND IMAGE SLIDESHOW  		
-
-/*$.vegas('slideshow', { 
-  delay:9000,
-  backgrounds:[
-    { src:'images/bgslides/1.jpg', fade:2000 },
-    { src:'images/bgslides/2.jpg', fade:2000 },
-    { src:'images/bgslides/3.jpg', fade:2000 }
-  ]
-})('overlay', {
-  src:'images/01.png',
-  opacity:0.2
-});*/
-
 }
 
 });	
