@@ -1,129 +1,41 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Ежедневник</title>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<!-- fallback to local jQuery-->
-<script type="text/javascript"> 
-		if (typeof jQuery == 'undefined') 
-		{ document.write(unescape("%3Cscript src='js/jquery-1.7.1.min.js' type='text/javascript'%3E%3C/script%3E"));} 
-
-</script>
-
-<script src="js/plugins.js"></script>
-<script src="js/script.js"></script>
-<script type="text/javascript" src="tweetable.js"></script>
-<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
-
-</head>
-<body>
-
-<div id="wrapper">
-	<div id="innerleft">
-        <div id="header">
-      		
-        </div><!--end header-->
-        <div id="mainslide"><img src="images/slides/1.jpg" alt="" slides /><!--Image to show if javascript disabled--></div><!--Main image slideshow placeholder-->
-        <div id="mainimglight"><img src="images/imagelight.png" alt="" width="480" height="133"/></div><!--Graident overlay on slider images-->
-        <ul id="nav"><!--Navigation-->
-
-        	<li id="homenav"><a href="#home">Дом</a></li>
-            <li id="aboutnav"><a href="#about">Планы на день</a></li>
-            <li id="resumenav"><a href="#resume">Календарь</a></li>
-            <li id="portfolionav"><a href="#portfolio">Новости</a></li>
-        
-        </ul>
-    
-    </div><!--end innerleft-->
-	
-    <div id="innerright">
+<!doctype html>
+<html lang="en" ng-app="todomvc">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>angular</title>
+		<link rel="stylesheet" href="css/style.css">
 		
-        <div id="home" class="page">
-
-        			<iframe src="reg.html" width="480" height="400"/></iframe> <!--Регистрация-->
-                <div id="homeslides">
-
-  					<div class="welcomeslide">
-					<center>
-                    <h2 class="large">Добро пожаловать!</h3>
-					</center>
-                    </div>
-  					
-                   <div class="welcomeslide secondaryslide">
-
-				   <h2>Я ваш ежедневник.</h2>
-                   </div>
-                    
-                    <div class="welcomeslide secondaryslide">
-				   <h2>Добро пожаловать!</h2>
-                    </div>
- 					        
-            </div><!-- end слайд -->
-        </div><!-- end дом -->
-        <div id="about" class="page">
-
-              <div class="scrollprevnext"></div>
-  
-
-
-            <div id ="aboutscroller">
-               <div class="content">
-               	
-<iframe src="angular.html" width="480" height="480"/></iframe><!--Планы на день-->
-
-          		</div> <!--end cлайд-->
-               
-                <div class="content">
-          		</div>
-            </div>
-
-        </div><!-- end планы -->
-        
-        <div id="resume" class="page">
-		  <iframe src="new.html" width="480" height="400"/></iframe> <!--Календарь-->
-        	<div class="verticalline">
-            	
-<div class="scrollprevnext"></div>
-            </div> 
-            <div id="resumescroller">
-                <div class="content">
-          		</div>
-                 <div class="content">
-                </div>
-                <div class="content">
-          		</div> <!--end content slide-->
-
-            </div><!-- end resumescroller -->
-
-        </div><!-- end календарь -->
-    
-   	  <div id="portfolio" class="page">
-<div id="nn_news">..<a href=https://news.yandex.ru/Cheboksary/index.html?from=index>новости</a> загружаются..</div>  <!--Новости-->
-<script language="JavaScript" src="http://yandex.ru/Cheboksary/index.html?from=index"></script> <!--Новости-->
-           
-				<div class="scrollprevnext"></div>
-  
-
-
-            <div id="portfolioscroller">
-            <div class="content">
-
-           	</div>
-            <div class="content">
-            </div>
-             <div class="content">
-           </div>
-          <div class="content">
-            </div>
-            </div>	
-        
-        </div><!--end новости-->
-
-</body>
+	</head>
+	<body>
+		<section id="todoapp" ng-controller="TodoCtrl">
+			<header id="header">
+				<form id="todo-form" ng-submit="addTodo()">
+					<input id="new-todo" placeholder="Что еще нужно сделать?" ng-model="newTodo" autofocus>
+				</form>
+			</header>
+			<section id="main" ng-show="todos.length" ng-cloak>
+				<input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+				<label for="toggle-all">Выполнить все задачи</label>
+				<ul id="todo-list">
+					<li ng-repeat="todo in todos | filter:statusFilter" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+						<div class="view">
+							<input class="toggle" type="checkbox" ng-model="todo.completed">
+							<label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+							<button class="destroy" ng-click="removeTodo(todo)"></button>
+						</div>
+						<form ng-submit="doneEditing(todo)">
+							<input class="edit" ng-model="todo.title" todo-blur="doneEditing(todo)" todo-focus="todo == editedTodo">
+						</form>
+					</li>
+				</ul>
+			</section>
+		
+		</section>
+	
+		<script src="angular/angular.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controllers/todoCtrl.js"></script>
+		<script src="js/services/todoStorage.js"></script>
+	</body>
 </html>
