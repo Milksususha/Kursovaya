@@ -9,3 +9,4 @@ curl_setopt($ch, CURLOPT_REFERER, 'http://google.com');//здесь реферрера
 curl_exec($ch);
 //Закрытие соединения
 curl_close($ch);
+?>
